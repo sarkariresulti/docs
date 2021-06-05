@@ -1,0 +1,25 @@
+	
+add_post_meta() : 
+---------------
+Note: yaha post meta add hone se pahle ke step hai 
+
+1. $check = apply_filters( "add_{$meta_type}_metadata", null, $object_id, $meta_key, $meta_value, $unique );
+/* Post Meta database me insert hone se pahle */
+2. do_action( "add_{$meta_type}_meta", $object_id, $meta_key, $_meta_value );
+/* Post meta insert Hone ke bad */
+3. do_action( "added_{$meta_type}_meta", $mid, $object_id, $meta_key, $_meta_value );
+
+update_post_meta() : 
+---------------
+Note: yaha post meta add hone se pahle ke step hai 
+
+1. 	$check = apply_filters( "update_{$meta_type}_metadata", null, $object_id, $meta_key, $meta_value, $prev_value );
+/* Post Meta database me update hone se pahle */
+2.do_action( "update_{$meta_type}_meta", $meta_id, $object_id, $meta_key, $_meta_value );
+/* Post meta update Hone ke bad */
+3.do_action( "updated_{$meta_type}_meta", $meta_id, $object_id, $meta_key, $_meta_value );
+
+
+
+
+wordpress ==> (WP Class/WP Object) ==> WP->parse_request() ==> 

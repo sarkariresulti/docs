@@ -1,0 +1,15 @@
+/* install this link in header */
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+
+/* Or @import in css file  */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* How to apply in html */
+
+h1{
+    font-family: Poppins;
+}
+

@@ -1,0 +1,28 @@
+## Geting theme support value :
+------------------------------
+get_theme_support( 'custom-logo', 'width' )   // return width
+
+## get customizer value : 
+-------------------------- 
+ //  =============================
+    //  = Image Upload              =
+    //  =============================
+    $wp_customize->add_setting('barra_image_upload', array(
+        'default'           => 'image.jpg',
+        'capability'        => 'edit_theme_options',
+        'type'           => 'option',
+ 
+    ));
+ 
+    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'image_upload_test', array(
+        'label'    => __('Image Upload Test', 'themename'),
+        'section'  => 'themename_color_scheme',
+        'settings' => 'barra_image_upload',
+    )));
+
+
+Example : 
+---------
+echo get_option('barra_image_upload');
+
+

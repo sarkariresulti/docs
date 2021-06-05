@@ -1,0 +1,19 @@
+/* #1 
+Here i have explained how to add custom font family 
+*/
+
+@font-face {
+    font-family: myCustumFontName;
+    src: url(fonts/opensans-regular.ttf),url(fonts/opensans-regular.woff);
+}
+
+/**
+    How to apply custom font family 
+*/
+
+h1{
+    font-family: myCustumFontName;
+}
+
+
+

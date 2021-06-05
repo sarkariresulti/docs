@@ -1,0 +1,47 @@
+#1 
+Sabase pahle hame theme ke name se folder banana hoga aur use age - lagakar 'child' likhana hoga  example:
+parent-child
+
+#2 
+Ab hamko parent theme ki style ko child me import karna hai iske liye '2' methods hai 
+
+1st Method :
+-----------
+@import url("../astra/style.css");  
+
+
+		or
+functions.php
+-------------
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+function my_theme_enqueue_styles() {
+    $parenthandle = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+    $theme = wp_get_theme();
+    wp_enqueue_style( $parenthandle, get_template_directory_uri() . '/style.css', 
+        array(),  // if the parent theme code has a dependency, copy it to here
+        $theme->parent()->get('Version')
+    );
+    wp_enqueue_style( 'child-style', get_stylesheet_uri(),
+        array( $parenthandle ),
+        $theme->get('Version') // this only works if you have Version in the style header
+    );
+}
+
+
+
+===================================================================================================
+====================================== ASTRA THEME FUNCTIONS ======================================
+===================================================================================================
+
+1. add_filter( 'astra_dynamic_theme_css', array( $this, 'add_inline_styles' ) );
+2. astra_parse_css( $css_output = array(), $min_media = '', $max_media = '' );
+3. wp_add_inline_style( 'astra-theme-css', $theme_css_data );
+4. add_filter( 'astra_theme_assets', array( $this, 'add_styles' ) );
+5. public function add_styles( $assets ) {
+			$assets['css']['astra-bne-flyout'] = 'compatibility/bne-flyout';
+			return $assets;
+   }
+
+6.  
+
+

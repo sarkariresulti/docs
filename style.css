@@ -1,0 +1,134 @@
+/* font intall  */
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Avenir Next LT Pro'), url('img/fonts/AvenirNextLTPro-Regular.woff') format('woff');
+    }
+    
+
+div#collapsibleNavId {
+    clear: both;
+    width: 96%;
+    max-width: 100%;
+}
+
+
+div#collapsibleNavId > div {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+.head_div_3 {
+    width: 39% !important;
+}
+
+img.teliphone {
+    max-width: 35px;
+}
+
+.header_bg_banner {
+    background-image: url(img/img/main_banner.png);
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-top: 115px;
+}
+
+li.nav-item.teliphone_li a {
+    padding-top: 3px;
+}
+
+
+div#collapsibleNavId li a {
+    text-transform: uppercase !important;
+    font-family: 'Avenir Next LT Pro'
+}
+.navbar-light .navbar-toggler {
+    border-color: snow;
+    padding-right: 0px;
+}
+
+nav.navbar.navbar-light {
+    justify-content: normal;
+}
+
+.head_div_1 ul li {
+    display: inline-block;
+    margin-right: auto;
+}
+
+.head_div_3 ul li {
+    display: inline-block;
+    margin-left: auto;
+}
+
+.header_bg_banner .big_heading{
+    font-size: 100px;
+    line-height: 15px;
+    color: #000000;
+    font-weight: 900;
+    font-family: "Avenir Next LT Pro";
+    position: relative;
+    top: -10px;
+    text-align: center;
+}
+
+.header_bg_banner .small_heading {
+    font-size: 25px;
+    line-height: 15px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Avenir Next LT Pro";
+    text-align: center;
+    margin-top: 223px;
+}
+
+.header_bg_banner .bottom_div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0px;
+}
+
+.header_bg_banner .bottom_div .first_div p {
+    margin: 0px;
+    background: #cc1542;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 10px 22px;
+    margin-left: 30px;
+}
+
+.header_bg_banner .bottom_div .second_div p {
+    background-color: #192a4f;
+    margin: 0px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 10px 22px;
+    margin-right: 30px;
+    padding-left: 60px;
+    position: relative;
+}
+
+.header_bg_banner .bottom_div .second_div p i.fa.fa-comments-o {
+    font-size: 37px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.header_bg_banner .bottom_div .second_div p .spn_2 {
+    padding-left: 12px;
+}
+
+.header_bg_banner .bottom_div .second_div p .spn_3 {
+    font-size: 9px;
+    margin-left: 17px;
+}
+
+
