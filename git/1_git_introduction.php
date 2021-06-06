@@ -88,25 +88,62 @@ merge commit :
 
 
 
-git diff :
+git diff : 
 ---------
 
+git diff            //(it compare two current file and staging file)
+git diff HEAD       // It compares from last commit (both stage and unstage)
+git diff --staged   //  Diffrence between staging area and last commit 
+git diff --cached   // Diffrence between staging area and last commit 
+
+git diff HEAD HEAD~1    //the parent commmit of HEAD (new commit to parent commit )
+git diff  HEAD~1        //(parent commit to child )
 
 
+git diff style/style.css     //compare particular file 
+git diff HEAD style/style.css     //compare particular file 
+
+git diff HEAD style/style.css  index.php    //two file compare particular file 
+
+Syntax : git diff branch1..branch2 
+git diff master..odd-numbers   // comparing from two branches (current branch is `master` second branch is `odd` and file is `numbers.txt`)
+
+==> comparing using hash (coomit) :
+git log --online 
+git diff <hash1>..<hash2>
 
 
+Stashing :
+----------
+Note: When we work in multipal branches sometime we forget to commit, the consequense of this is 
+ when we  swith to master branch all changes of previous branch comes with.
 
 
+`git stash `  or `git stash save`    // (Before Switching The Branch) 
+ git stash  pop                     //   (After coming from another branch ) it returns every changes made by us 
+
+ git stash apply         // same works like `pop` only diffrence it can apply on multipal branches 
+
+===> Note : When we do multipal time stash in file (It creates a list of stash then apply a stash from list )
+
+git stash list              // listin stash 
+git stash apply stash@{2}   // apply particular stash 
+
+==> Clear stash   
+
+git stash drop stash@{0}        // clear particular stash using id 
+git stash clear                 // clear all stash 
 
 
+================================================ Undoing Changes ================================
 
+git checkout <commit-hash>          // first 7 character 
 
-
-
-
-
-
-
+Referencing Commits Relative to HEAD :
+-------------------------------------
+git checkout HEAD~1         //goto parent head 
+git checkout HEAD~2         //got grand parent head 
+git checkout HEAD~3         //3rd parent head 
 
 
 
