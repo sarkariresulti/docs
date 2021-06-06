@@ -26,6 +26,10 @@ rm -rf             // remove `directory`
 
 
 git  log  
+git log --abbrev-commit     // small size hash 
+git log --oneline           // only return `hash key` and `commit messages` 
+
+--
 
 git init 
 
@@ -39,7 +43,9 @@ q               ==> press `q` to exit from  log
 
 Setting Custom code Editor (for git ):
 --------------------------------------
-git config --global core.editor 'code --wait' 
+git config --global core.editor 'code --wait'   
+
+
 
 
 
