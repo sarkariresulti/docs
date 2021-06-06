@@ -45,6 +45,11 @@ Setting Custom code Editor (for git ):
 --------------------------------------
 git config --global core.editor 'code --wait'   
 
+commit :
+------- 
+git commit 
+git commit -m "<Your commit message>"
+git commit -a -m "<Your commit message>"   	//skip staging and direct commit 
 
 ##Add a file that you missed to add in your last commit
 git add filename
