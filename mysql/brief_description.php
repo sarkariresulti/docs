@@ -61,16 +61,3 @@ Commit: It is used to save the transaction on the database.
 Rollback: It is used to restore the database to original since the last Commit.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-

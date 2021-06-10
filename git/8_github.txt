@@ -1,0 +1,123 @@
+Git clone:
+----------
+Syntax : git clone <url> 
+Example: git clone https://github.com/blash 
+
+================================================= Github Signup and SSH ======================================
+Link (More Info): https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/checking-for-existing-ssh-keys 
+
+1) ls -al ~/.ssh   //list all ssh key 
+
+## Generating ssh key 
+---------------------
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+Example: ssh-keygen -t ed25519 -C "resultisarkari@gmail"
+				or 
+				
+$ ssh-keygen -t rsa -b 4096 -C "resultisarkari@gmail"
+$ eval $(ssh-agent -s)					//start the ssh-agent in the background
+[
+	 open ~/.ssh/config     //for checking it is exist or not 
+     touch ~/.ssh/config    // if the file doesn't exist create file 
+	 
+	 Host * 								    //Open your ~/.ssh/congig file , then modify the file, replacing 	
+			AddKeysToAgent yes					//  ~/.ssh/id_ed25519 if you are not using the default location
+			UseKeychain yes 					//  and name for your id_ed25519 key. 
+			IdentityFile ~/.ssh/id_ed255519 
+]
+
+ssh-add ~/.ssh/id_rsa
+$ cat ~/.ssh/id_rsa.pub
+
+
+##checking ssh connection 
+--------------------------
+ssh -T git@github.com 					// If it will return my username then it is working good 
+
+## uploading on git hub :
+-------------------------
+Syntax : git remote add <name> <url>  
+Example : git remote add origin git@github.com:sarkariresulti/demo.git
+
+Renaming and Removing remote name :
+-----------------------------------
+git remote rename <old> <new> 
+git remote remove <your-remote-name>
+
+
+Push :  
+----
+Syntax : git push <remote> <branch>
+git push -u origin master
+git push --force origin master     //sometime forcefully added 
+
+git remote set-url origin https://github.com/sarkariresulti/docs.git
+
+git remote   			//list remote
+git remote -v  			//list remote origin
+
+Remote Branches :
+-----------------
+Note: Run `git branch -r ` to view the remote branches our local repository knows about . 
+Syntax: git branch -r 
+
+git checkout origin /main           //switching to my current remote branch  
+
+Note: Jab bhi ham `github` se kuchha bhi clone karte hai to to keval default branch hi download hoti hai aur sabhi 
+       branches ko download karne ka method niche diya hai.
+
+git branch -r                    // to see all remote branches 
+git switch <your-branch-nname>     // aisa karne se jo other remote branch hote hai vo show hone lagate hai 
+                                   // usse pahle `git branch -r ` ki madad se ham sabhi remote branches dekha lenge 
+
+Fetching :  
+---------
+Note: Jab bhi ham github se data ko fetch karte hai to vo hamare `master` branch me ni add hota hai vo pichhale clone vale branch 
+       se aage badhane lagata hai. yadi aap un changes ko dekhana chahate hai to `git checkout origin/master`. My Master 
+       branch will be untouched.
+
+Note no 2 : jab bhi ham fetch karte hai to ye `remote repository` se `local repositiory` me aa jati hai . jab commit kate hai 
+            to bhi ye `local repository` me a jati hai. or vaha se push karne pr `remote repository` me cali jati hai. 
+        
+git fetch <remote>                        // ye default origin ko fetch karega 
+git fetch <remote> <branch>               // ye specific branch ko fetch karne ke liye hai 
+Example: git fetch origin branch_2        
+
+Pull :
+-----
+git pull = git fetch + git merge 
+
+Syntax : git pull <remote> <branch> 
+
+
+Short Text : git pull   //ye corrent branch ko server se pull karega `sabse pahle hame apne brach me switch karna padega`
+--------- 
+
+Clear :
+-------
+git config --global --unset-all
+
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+
+
+Centralized Workflow :
+----------------------
+----------------------
+
+
+my boss local machine for merging branch:
+----------------------------------------
+Note: Switch to the branch in question . Merge in master and resolve the conflicts.
+
+git fetch origin 
+git switch my-new-feature-branch 
+git merge master 
+fix conflicts!
+
+Note: switch to master . Merge in the feature branch (now with no conflicts ) push changes up to github.
+
+git switch master 
+git merge my-new-feature-branch 
+git push origin master

@@ -1,0 +1,22 @@
+
+Stashing :
+----------
+Note: When we work in multipal branches sometime we forget to commit, the consequense of this is 
+ when we  swith to master branch all changes of previous branch comes with.
+
+
+`git stash `  or `git stash save`    // (Before Switching The Branch) 
+ git stash  pop                     //   (After coming from another branch ) it returns every changes made by us 
+
+ git stash apply         // same works like `pop` only diffrence it can apply on multipal branches 
+
+===> Note : When we do multipal time stash in file (It creates a list of stash then apply a stash from list )
+
+git stash list              // listin stash 
+git stash apply stash@{2}   // apply particular stash 
+
+==> Clear stash   
+
+git stash drop stash@{0}        // clear particular stash using id 
+git stash clear                 // clear all stash 
+

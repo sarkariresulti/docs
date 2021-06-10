@@ -25,4 +25,3 @@ function send_my_mail(){
 add_action('wp_ajax_sendmail', 'send_my_mail');
 add_action('wp_ajax_nopriv_sendmail', 'send_my_mail');
 
-

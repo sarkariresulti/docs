@@ -1,0 +1,20 @@
+Merging into `master` branch :
+------------------------------
+git branch branchNo1  						// create new branch
+git branch									// list all branch 
+git checkoout branchNo1						// shifting into branch `branchNo1`
+git merge branchNo1							// `branchNo1` branch added into `master` branch
+git checkoout -b branchNo1					// `branchNo1` branch created and also shifted into `branchNo1` branch
+ 
+                   or 
+
+git branch branch_1  						// create new branch  
+git switch branch_1                         // shifting into branch `branch_1`
+git switch -c branch_2                      // creating `branch_2` and shifting to `branch_2`
+git branch -D branch_1                      // Delete `branch_1` (before deleting switch to `master`)
+git branch -m branch_3                     // Rename `branch_1` to `branch_3` (before Renaming  switch to that branch)
+git merge branchNo1							// `branchNo1` branch added into `master` branch (Before merge into `master` we need to switch `master`)
+
+
+merge commit :
+--------------

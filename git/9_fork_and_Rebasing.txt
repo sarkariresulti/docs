@@ -1,0 +1,45 @@
+Fork & Clone : Another Workflow -
+---------------------------------
+
+Note : jab ham kisi ke project me fork me click karte hai to vo same project hamare repositories me add ho jati hai 
+       ap ham chahe to isko jaise vaise use kar sakte hai. 
+
+       2) Get pull pr click karke ham chahe to apne changes ko original repositories me add karne ko de sakte hai.
+
+ 
+ Rebasing :
+---------
+
+1) There are two main ways to use the git rebase commands:
+   - as an alternative to merging
+   - as a cleanup tool 
+
+   Syntax: git rebase master 
+
+   Example: git switch feature 
+            git rebase master 
+
+
+Rewriting History :
+-------------------
+Sometimes we want to rewrite , delete rename or even reorder commits (before sharing them ) We can do this using `git rebase`
+
+Interactive Rebase : 
+--------------------
+
+Running git rebase with the `-i` option will enter the interactive mode , which allows us to edit comits, add files , 
+drop commits etc. Note that we need to specify how far back we want to rewrite commits. 
+Also, notice that we are rebasing a series of commits onto the HEAD they currently are based on.
+
+Syntax:  git rebase -i HEAD~4 
+
+What Now ?
+
+In our text editor, we'll see a list of commits alongside a list of commands that we can choose from . Here are a couple 
+of the more commonly used commands:
+
+1) pick - use the commit 
+2) reword - use the commit, but edit the commit message 
+3) edit - use commit , but stop for amending 
+4) fixup - use commit contents but meld it into previous commit and discard the commit message. 
+5) drop - remove commit 

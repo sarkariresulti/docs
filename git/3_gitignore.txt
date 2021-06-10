@@ -1,0 +1,7 @@
+.gitignore
+==========
+/mylog.log 				//ignore `mylog.log` on root folder
+mylog.log				// ignore `mylog.log` on anywhere
+*.log					// ignore any log
+newfolder/				// ignore `newFolder` directory
+
