@@ -1,13 +1,3 @@
-=======================
-Register on GitKraken
--------------------
-name  ==> resultisarkari
-email ==> resultisarkari@gmail.com
-pd 	  ==> ravi@123456
-
-=======================
-
-
 
 git config --global user.name resultisarkari
 git config --global user.email resultisarkari@gmail.com
@@ -150,9 +140,6 @@ $ cat ~/.ssh/id_rsa.pub
 ##checking ssh connection 
 --------------------------
 ssh -T git@github.com 					// If it will return my username then it is working good 
-
-user = sarkariresulti
-pd== XYZ@12345678910a
 
 ## uploading on git hub :
 -------------------------
