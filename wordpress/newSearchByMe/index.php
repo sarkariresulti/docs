@@ -65,7 +65,3 @@ if ( array_intersect( $allowed_roles, $user->roles ) ) {
    // Stuff here for allowed roles
 }
 
-
-
-
-
