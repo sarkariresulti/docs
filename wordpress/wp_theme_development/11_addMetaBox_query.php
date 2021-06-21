@@ -18,7 +18,7 @@ add_action('save_post','save_post_callback');
 function save_post_callback($post_id){ 
 	 global $post;  
 	//$title_array = array_filter($_POST['phone_repair_title']);
-	$main_data ="mani singh good boy ";
+	
 	update_post_meta($post_id, 'all_repair_services', $main_data);
 	update_post_meta($post_id, 'mani_address', $_POST['address']);
 }

@@ -1,5 +1,18 @@
-###################################  create  post   ##############
+WP_Query Filter hook :
+----------------------
+$where = apply_filters_ref_array( 'posts_where_paged', array( $where, &$this ) );
+$groupby = apply_filters_ref_array( 'posts_groupby', array( $groupby, &$this ) );
+$join = apply_filters_ref_array( 'posts_join_paged', array( $join, &$this ) );
+$orderby = apply_filters_ref_array( 'posts_orderby', array( $orderby, &$this ) );
+$distinct = apply_filters_ref_array( 'posts_distinct', array( $distinct, &$this ) );
+$limits = apply_filters_ref_array( 'post_limits', array( $limits, &$this ) );
+$fields = apply_filters_ref_array( 'posts_fields', array( $fields, &$this ) );
 
+$clauses = (array) apply_filters_ref_array( 'posts_clauses', array( compact( $pieces ), &$this ) );
+
+
+
+###################################  create  post   ##############
 <?php
 
 // insert Post

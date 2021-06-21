@@ -1,4 +1,10 @@
 <?php
+// Check Doing ajax for Admin
+define( 'DOING_AJAX', true );  
+is_user_logged_in()  // true if logged in 
+wp_is_maintenance_mode() // return `true` if website is mentinanace mode 
+
+
 
 // =============================================== User role registration  ============================================================	
  //user role registration
@@ -45,8 +51,11 @@ if (current_user_can('upload_files')){
     
     ################################  get user info by mail #########################
 <?php 
+$userdata = WP_User::get_data_by( $field, $value );
 $to = $_POST['email']; 
  $user = get_user_by('email', $to);
  $id = base64_encode($user->data->ID*2);
  
  ?>
+
+ $user_meta = get_user_meta( $user->ID );

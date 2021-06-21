@@ -1,5 +1,6 @@
 wp_register_script ( 'custom-script', get_template_directory_uri() . '/js/custom-script.js' );
 wp_enqueue_script ( 'custom-script' );
+wp_add_inline_script( 'custom-script', 'jQuery(document).ready(function(){});' );
 
 
 
@@ -62,8 +63,4 @@ add_action("wp_enqueue_scripts","custom_plugin_assests");
 			</script>
 			<?php
 		}
-
-
-
-
 

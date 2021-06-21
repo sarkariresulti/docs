@@ -1,4 +1,14 @@
 <?php
+//	 * Fires after a new user registration has been recorded.
+do_action( 'register_new_user', $user_id );
+$user_pass = wp_generate_password( 12, false );
+
+$credentials = array();
+$credentials['user_login'] = "mani"
+$credentials['user_password'] = "mani"
+$credentials['remember'] =    true ; 
+wp_signon( $credentials = array(), $secure_cookie = '' ); // For login in dashboard 
+
 
 // =============================================== User redirect specific page after login  =====================================
  function owt_login_user_role_filter($redirect_to,$request,$user){
