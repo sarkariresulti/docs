@@ -53,3 +53,31 @@ update_user_meta(int $user_id,string $meta_key,mixed $meta_value,mixed $prev_val
 delete_user_meta(int $user_id,string $meta_key,mixed $meta_value = '');
 get_user_meta(int $user_id,string $key = '',bool $single = false);
 
+
+// ================================ check user capability ======================
+
+## Checking current user Ability 
+// --------------------------------
+current_user_can( 'edit_posts' );                            // For all post 
+current_user_can( 'edit_post', $post->ID );                  // Particular post 
+current_user_can( 'edit_post_meta', $post->ID, $meta_key );  // For particualr Post Meta Key 
+
+// Example No 1  :
+// ---------
+
+if ( ! current_user_can( 'delete_post', $post_id ) ) {
+    wp_die( __( 'Sorry, you are not allowed to move this item to the Trash.' ) );
+}
+
+if ( ! current_user_can( 'manage_options' ) ) {
+    add_filter( 'show_admin_bar', '__return_false' );
+}
+
+
+## Checking For allowed Roles :
+// ------------------------------
+$user = wp_get_current_user();
+$allowed_roles = array( 'editor', 'administrator', 'author' );
+if ( array_intersect( $allowed_roles, $user->roles ) ) {
+   // Stuff here for allowed roles
+}

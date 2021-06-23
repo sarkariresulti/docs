@@ -2,6 +2,58 @@ Class
 ------
 WP_List_Table
 
+Hooks : 
+-------
+
+#example :
+---------
+<?php 
+add_filter('manage_employee_management_posts_columns', 'manage_employee_management_posts_columns_func', 20,);
+function manage_employee_management_posts_columns_func($posts_columns)
+{
+	$new_array = [];
+	$new_array['cb'] = $posts_columns['cb'];
+	$new_array['author'] = $posts_columns['author'];
+	$new_array['title'] = $posts_columns['title'];
+	$new_array['categories'] = $posts_columns['categories'];
+	$new_array['tags'] = $posts_columns['tags'];
+	$new_array['date'] = $posts_columns['date'];
+	$new_array['post_modified'] = "Post Status";
+	return $new_array;
+}
+
+// add_filter( 'manage_{$this->screen->id}_sortable_columns', 'list_table_primary_column_func',20,1);
+add_filter('manage_edit-employee_management_sortable_columns', 'manage_edit_page_sortable_columns_func', 20, 1);
+function manage_edit_page_sortable_columns_func($sortable_columns)
+{
+	unset($sortable_columns['date']);
+	$sortable_columns['tags'] 		 = array('tags', true);
+	$sortable_columns['categories'] = array('categories', true);
+	return $sortable_columns;
+}
+
+add_filter('post_column_taxonomy_links', 'post_column_taxonomy_links_func', 20, 3);
+// add_filter( 'list_table_primary_column', 'list_table_primary_column_func',20,2);
+function post_column_taxonomy_links_func($term_links, $taxonomy, $terms)
+{
+	$term_links[] = '<a href="">My cat</a>';
+	return $term_links;
+}
+
+add_action('manage_employee_management_posts_custom_column', 'custom_book_column', 10, 2);
+function custom_book_column($column, $post_id)
+{
+	$column;
+	switch ($column) {
+		case 'post_modified':
+				echo get_post($post_id)->post_modified;
+			break;
+	}
+}
+
+?>
+
+
 Methods :
 ---------
 
@@ -136,7 +188,7 @@ class Cust_Table_Liist extends WP_List_Table {
     public function wp_list_table_data($orderby = '', $order = '', $search_term = '') {
        global $wpdb;
         $all_posts = $wpdb->get_results(
-            "SELECT * from " . $wpdb->posts . " WHERE post_type = 'post' AND post_status = 'publish' ORDER BY post_title DESC"
+            "SELECT * from " . $wpdb->posts . "WHERE post_type = 'post' AND post_status = 'publish' ORDER BY post_title DESC"
         );  
 
         $posts_array = array();
@@ -176,8 +228,3 @@ $my_cust_table->display();
 
 Example No 2 : 
 --------------
-
-
-
-
-

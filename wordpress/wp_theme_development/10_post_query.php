@@ -11,7 +11,6 @@ $fields = apply_filters_ref_array( 'posts_fields', array( $fields, &$this ) );
 $clauses = (array) apply_filters_ref_array( 'posts_clauses', array( compact( $pieces ), &$this ) );
 
 
-
 ###################################  create  post   ##############
 <?php
 
