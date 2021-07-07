@@ -7,3 +7,4 @@ The virtual Memory image is divided in segement :
 3) Heap 
 4) Stack 
 
+ 
