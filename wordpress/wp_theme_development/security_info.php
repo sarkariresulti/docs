@@ -4,3 +4,4 @@ Note:  Xmlrpc provides remote access of wordpress on http , so It can be used by
 
 add_filter( 'xmlrpc_enabled', '__return_false' );
 
+

@@ -9,6 +9,8 @@ Some Important plugin for Debuging:
 ?>
 5) Query Monitor
 
+
+
 /** for Development **/
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );

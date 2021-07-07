@@ -1,6 +1,6 @@
 /* In Your functions.php */
 ---------------------------
-add_action( 'widgets_init', 'register_foo' );
+add_action('widgets_init', 'register_foo' );
 function register_foo() { 
     register_widget( 'Foo_Widget' ); 
 }

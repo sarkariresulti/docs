@@ -11,6 +11,24 @@ $fields = apply_filters_ref_array( 'posts_fields', array( $fields, &$this ) );
 $clauses = (array) apply_filters_ref_array( 'posts_clauses', array( compact( $pieces ), &$this ) );
 
 
+====================== CREATE TABLE  =========================
+<?php 
+global $wpdb;
+    require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+	$table_name = 'my_custom_table';
+
+	if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+			$sql = "CREATE TABLE `my_custom_table` (
+				`id` int(10) NOT NULL,
+				`name` varchar(22) NOT NULL,
+				`mail` varchar(22) NOT NULL,
+				`home` varchar(22) NOT NULL
+			) ENGINE=InnoDB DEFAULT CHARSET=latin1
+			";
+			dbDelta($sql);
+		}
+?>
+
 ###################################  create  post   ##############
 <?php
 
