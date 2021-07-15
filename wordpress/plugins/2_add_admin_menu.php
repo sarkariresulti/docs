@@ -1,7 +1,7 @@
 <?php
 
 
-========================= Add menu page ======================
+// ========================= Add menu page ======================
 // add menu and sub menu page 
 function add_my_custom_menu(){
     //register menu 

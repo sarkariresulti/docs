@@ -10,7 +10,7 @@
 	}else{
 		$students = $wpdb->get_results("SELECT * from " . $table_name. " ORDER BY id DESC LIMIT  {$offset_per_page}, 
 			{$items_per_page} "); 
-	}
+	}   
 
 	$table_name        = $wpdb->prefix . "students";
 	$customPagHTML     = "";
