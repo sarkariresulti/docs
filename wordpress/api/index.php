@@ -35,3 +35,5 @@ $arr = [
         'message' => 'Unauthorized Access'
     ];  
     wp_send_json($arr, 401);
+
+    

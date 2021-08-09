@@ -15,7 +15,7 @@ wp_is_maintenance_mode() // return `true` if website is mentinanace mode
 	 add_role( 'superintendent', 'Superintendent', get_role( 'administrator' )->capabilities );
 
 	 
-// =============================================== create a user and asign user to user role than save them to database  ================
+// ====================== create a user and asign user to user role than save them to database  ================
 $student_id = $user_id = wp_create_user($_REQUEST['username'],$_REQUEST['password'],$_REQUEST['email']);
         $user = new WP_User($student_id);
         $user->set_role("wp_book_user_key");
@@ -49,12 +49,12 @@ if (current_user_can('upload_files')){
     }
 
     
-    ################################  get user info by mail #########################
-<?php 
+################################  get user info by mail #########################
+
 $userdata = WP_User::get_data_by( $field, $value );
 $to = $_POST['email']; 
- $user = get_user_by('email', $to);
- $id = base64_encode($user->data->ID*2);
+$user = get_user_by('email', $to);
+$id = base64_encode($user->data->ID*2);
  
  ?>
 
