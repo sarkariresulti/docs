@@ -10,7 +10,7 @@ Ab hamko parent theme ki style ko child me import karna hai iske liye '2' method
 @import url("../astra/style.css");  
 
 
-		or
+		or      
 functions.php
 -------------
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
